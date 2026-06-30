@@ -1,0 +1,19 @@
+Root cause summary
+The dataset is Parliamentary/formal Urdu. It is missing: everyday colloquial Roman Urdu, English tech loanwords in Roman script, contracted forms like maine/usne, and modern vocabulary entirely. The model didn't learn wrong things — it learned a completely different domain.
+
+Suggestions
+Option 1 — Fine-tune on colloquial pairs (most targeted)
+
+Collect or create Roman Urdu ↔ Urdu script pairs specifically from the colloquial domain — everyday sentences, tech words, loanwords. Even 500–2000 high quality pairs covering the missing vocabulary could significantly fix the domain gap. This is the most direct fix. The model architecture is fine, the training domain is wrong.
+Option 2 — Data augmentation on missing loanwords
+
+Since the Urdu side already knows میسج, ایکسرسائز, چھوڑ etc., you can synthetically generate Roman↔Urdu pairs for exactly these words and fine-tune on them. Small and targeted — might fix Group 1 errors specifically without touching the rest.
+Option 3 — Switch base model
+
+M2M100 fine-tuned on Parliamentary data may be too far from colloquial Urdu to recover with small fine-tuning. There may be models already trained on colloquial Roman Urdu↔Urdu that would perform better out of the box and need less correction.
+Option 4 — Post-processing layer
+
+For the most frequent and predictable errors (loanwords, script inconsistency), a rule-based post-processing step could catch and fix them without any training. Fast to implement, but doesn't scale and doesn't fix the deeper issues.
+Option 5 — Script normalization as preprocessing
+
+The Arabic ي issue can be fixed entirely with a Unicode normalization pass on training data before fine-tuning — replace all ي (U+064A) with ی (U+06CC) in the Urdu column. This alone would clean up the script inconsistency errors.
