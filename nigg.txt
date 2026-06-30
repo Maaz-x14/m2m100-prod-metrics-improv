@@ -1,0 +1,106 @@
+ python client/client.py 
+Sending Urdu→Roman test pairs to server:
+
+Input Urdu: میں نے اسے میسج کیا
+Pred Roman: __ru__ mein ne usay confirm kya
+Ref Roman : main ne usse message kiya
+---
+Input Urdu: وہ روز ایکسرسائز کرتا ہے
+Pred Roman: __ru__ woh roz flour karta hai
+Ref Roman : woh roz exercise karta hai
+---
+Input Urdu: کل ایگزام ہے میرا
+Pred Roman: __ru__ kal baab hai mera
+Ref Roman : kal exam hai mera
+---
+Input Urdu: وہ میتھ میں فیل ہو گیا
+Pred Roman: __ru__ woh mith mein feel ho gaya
+Ref Roman : woh math mein fail ho gaya
+---
+Input Urdu: اس نے پورا پروجیکٹ ڈیلیٹ کر دیا
+Pred Roman: __ru__ is ne poora Karachi dilit kar diya
+Ref Roman : usne poora project delete kar diya
+---
+Input Urdu: بیک اپ لینا ضروری ہے
+Pred Roman: __ru__ back ke lena zurori hai
+Ref Roman : backup lena zaroori hai
+---
+Input Urdu: یہ فائل کرپٹ ہو گئی
+Pred Roman: __ru__ ki file corrupt ho gayi
+Ref Roman : yeh file corrupt ho gayi
+---
+Input Urdu: مجھے کل انٹرویو دینا ہے
+Pred Roman: __ru__ mujhe kal interview dena hai
+Ref Roman : mujhe kal interview dena hai
+---
+Input Urdu: اس کا لیپ ٹاپ کریش ہو گیا
+Pred Roman: __ru__ is ka laip taap York ho gaya
+Ref Roman : uska laptop crash ho gaya
+---
+Input Urdu: میں نے سسٹم ری اسٹارٹ کیا
+Pred Roman: __ru__ mein ne system ree start kya
+Ref Roman : maine system restart kiya
+---
+Input Urdu: وہ آن لائن کلاس میں تھا
+Pred Roman: __ru__ woh aan line class mein tha
+Ref Roman : woh online class mein tha
+---
+Input Urdu: ایپ اپڈیٹ کر لو
+Pred Roman: __ru__ ko apdit kar lau
+Ref Roman : app update kar lo
+---
+Input Urdu: سرور ڈاؤن ہے ابھی
+Pred Roman: __ru__ suroor down hai abhi
+Ref Roman : server down hai abhi
+---
+Input Urdu: پاس ورڈ چینج کرو اپنا
+Pred Roman: __ru__ paas word change karo apna
+Ref Roman : password change karo apna
+---
+Input Urdu: اسکرین شاٹ لے لو اس کا
+Pred Roman: __ru__ screen aur le lau is ka
+Ref Roman : screenshot le lo iska
+---
+Input Urdu: وہ گھر پر نہیں ہے
+Pred Roman: __ru__ woh mamu par nahi hai
+Ref Roman : woh ghar par nahi hai
+---
+Input Urdu: میں کل آؤں گا
+Pred Roman: __ru__ mein kal aon ga
+Ref Roman : main kal aaunga
+---
+Input Urdu: اس نے مجھے بلایا تھا
+Pred Roman: __ru__ is ne mujhe bulaya tha
+Ref Roman : usne mujhe bulaya tha
+---
+Input Urdu: کھانا تیار ہو گیا
+Pred Roman: __ru__ khana liye ho gaya
+Ref Roman : khana tayar ho gaya
+---
+Input Urdu: بارش ہو رہی ہے باہر
+Pred Roman: __ru__ barish ho rahi hai bahar
+Ref Roman : baarish ho rahi hai bahar
+---
+Input Urdu: مجھے نیند آ رہی ہے
+Pred Roman: __ru__ mujhe neend aa rahi hai
+Ref Roman : mujhe neend aa rahi hai
+---
+Input Urdu: وہ بہت تھک گیا ہے
+Pred Roman: __ru__ woh bohat thak gaya hai
+Ref Roman : woh bahut thak gaya hai
+---
+Input Urdu: یہ کام کل تک ہو جائے گا
+Pred Roman: __ru__ ki kaam kal taq ho jaye ga
+Ref Roman : yeh kaam kal tak ho jayega
+---
+Input Urdu: اس نے سچ نہیں بولا
+Pred Roman: __ru__ is ne sach nahi mein
+Ref Roman : usne sach nahi bola
+---
+Input Urdu: میں صبح اٹھ کر چلا گیا
+Pred Roman: __ru__ mein subah uth kar par gaya
+Ref Roman : main subah uth kar chala gaya
+---
+
+Completed 25 test pairs.
+((.venv) ) (base) maazahmad@nimbus:~/Desktop/m2m100/m2m100-deploy$ 

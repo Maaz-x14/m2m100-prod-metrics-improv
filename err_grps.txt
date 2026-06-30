@@ -1,0 +1,24 @@
+Group 1 — Word never seen in training (Roman side), but correct Urdu form exists in training
+message → 0 Roman matches, but میسج has 2315 Urdu matches. The model has seen میسج thousands of times in the Urdu column, but never paired with the Roman word message. So it knows the Urdu word exists but has no mapping to it from Roman script. Result: hallucinates بیرٹی.
+Same pattern for exercise → 0 Roman, 60 Urdu matches. badhna → 0 Roman, 371 Urdu. chhod → 0 Roman, but چھوڑ has 41,434 Urdu matches — massive presence on Urdu side, zero on Roman side.
+
+Group 2 — Word never seen on either side
+exam (as ایگزام) → 0 Roman, 0 Urdu. But امتحان has 6,523 matches. The dataset is formal/Parliamentary, so the model only ever learned the classical word. It has genuinely never seen the loanword form at all — neither Roman nor Urdu.
+delete, backup, maafi → 0 Roman matches each.
+
+Group 3 — Word seen in Roman, but mapped to wrong meaning
+fail → 805 Roman matches, but all of them are the word Fail meaning فاعل (subject/doer in grammar) or فیلڈ (field) in names like Field Marshal. The model learned fail → فاعل/فیل but in completely wrong contexts. When it sees fail in a colloquial sentence it's confused.
+maazi → 7,732 Roman matches, all correctly mapped to ماضی. maafi → 0 Roman matches. So when the model sees maafi, phonetically close to maazi, it maps it to ماضی. Not a labeling error — just phonetic confusion from a near-homophone with high frequency.
+dhyan → 98 Roman matches, but all of them are لدھیانہ (Ludhiana, a city name). The model never saw dhyan meaning attention — only as part of a proper noun. So it learned a completely wrong context for those characters.
+
+Group 4 — New patterns from the fresh predictions
+maine → مائن repeatedly. The model has never seen the contracted first-person past form maine — it's breaking it into wrong subword pieces.
+app → اینڈرائڈ — the model associated app with Android (probably from tech context in training), not the word itself.
+gym → گیمم — pure hallucination, no training signal.
+wifi → وائیپی — same.
+ticket book → ٹکٹ بوجھ — book as a verb doesn't exist in training, model picked nearest phonetic match بوجھ (burden).
+restart → ریستارٹ — close but wrong script form.
+math → ماتھ — correct transliteration actually, your ref says میتھ. Both are arguably valid, minor.
+
+Group 5 — Script inconsistency in training data
+0.71% of rows (45,051 examples) contain Arabic ي in the Urdu column. That's not negligible — it's enough to teach the model that Arabic ي is an acceptable Urdu character. This explains the ميں, کيا, نہيں pattern in predictions.
